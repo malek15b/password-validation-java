@@ -94,7 +94,7 @@ class PasswordValidatorTest {
         //Given
         String password = PasswordValidator.generateSecurePassword(12);
         //Then
-        assertTrue(PasswordValidator.isValid(password));
+        assertTrue(PasswordValidator.isValid(password), password);
     }
 
     @Test
