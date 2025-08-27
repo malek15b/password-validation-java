@@ -107,6 +107,7 @@ public class PasswordValidator {
     }
 
     public static String generateSecurePassword(int length) {
+        //TODO
         String all = letters.toUpperCase() + ALL;
         return generateSecurePassword(length, all);
     }
