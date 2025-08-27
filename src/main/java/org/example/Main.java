@@ -5,7 +5,7 @@ public class Main {
         if (args.length > 0) {
             String pw = args[0];
             boolean isValid = PasswordValidator.isValid(pw);
-            System.out.println(isValid ? "Passwort ist gültig" : "Passwort ist nicht gefunden");
+            System.out.println(isValid ? "Passwort ist gültig" : "Passwort ist nicht gültig");
         } else {
             System.out.println("Bitte Passwort als Argument angeben.");
         }
