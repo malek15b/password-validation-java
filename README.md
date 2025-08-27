@@ -1,5 +1,9 @@
 ## Passwortvalidierung
 
+### Projektbeschreibung
+
+Prüft Passwörter nach Länge, Ziffern, Groß-/Kleinbuchstaben, gängigen Passwörtern und Sonderzeichen.
+
 #### Muss-Kriterien (Basis):
 - mindestens **8 Zeichen**,
 - mindestens **eine Ziffer** (0–9),
@@ -23,3 +27,16 @@ public final class PasswordValidator {
     // Optionale Gesamtsicht:
     public static boolean isValid(String password); // nutzt die obenstehenden Checks
 }
+```
+#### Build / Run / Tests:
+
+- lokal: mvn clean verify
+- Artefakt: mvn package → target/*.jar
+
+![CI](https://github.com/malek15b/password-validation-java/actions/workflows/maven.yml/badge.svg)
+
+#### Beispiel-Aufrufe:
+
+```
+boolean isValid = PasswordValidator.isValid("MyPass123!");
+```
