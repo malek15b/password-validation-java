@@ -22,9 +22,7 @@ public final class PasswordValidator {
     public static boolean containsDigit(String password);
     public static boolean containsUpperAndLower(String password);
     public static boolean isCommonPassword(String password); // kleine interne Liste
-    // Bonus:
     public static boolean containsSpecialChar(String password, String allowed);
-    // Optionale Gesamtsicht:
     public static boolean isValid(String password); // nutzt die obenstehenden Checks
 }
 ```
