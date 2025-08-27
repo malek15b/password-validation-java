@@ -21,9 +21,10 @@ public final class PasswordValidator {
     public static boolean hasMinLength(String password, int min);
     public static boolean containsDigit(String password);
     public static boolean containsUpperAndLower(String password);
-    public static boolean isCommonPassword(String password); // kleine interne Liste
+    public static boolean isCommonPassword(String password);
     public static boolean containsSpecialChar(String password, String allowed);
-    public static boolean isValid(String password); // nutzt die obenstehenden Checks
+    public static boolean isValid(String password);
+    public static String generateSecurePassword(int length, String allowedSpecials);
 }
 ```
 #### Build / Run / Tests:
