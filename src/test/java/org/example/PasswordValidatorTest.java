@@ -43,7 +43,6 @@ class PasswordValidatorTest {
     public void hasMinLength_ShouldReturnFalseWhenPasswordIsNull() {
         //Given
         int length = 8;
-        String password = null;
         //Then
         assertFalse(PasswordValidator.hasMinLength(null, length));
     }
