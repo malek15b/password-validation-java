@@ -40,3 +40,8 @@ public final class PasswordValidator {
 ```
 boolean isValid = PasswordValidator.isValid("MyPass123!");
 ```
+#### CLI:
+
+```
+java -jar target/PasswordValidator.jar MyPass123!
+```
