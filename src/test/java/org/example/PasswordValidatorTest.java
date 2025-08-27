@@ -81,14 +81,24 @@ class PasswordValidatorTest {
     }
 
     @Test
+    public void containsSpecialChar_ShouldReturnFalseWhenPasswordNotContainsSpecialChar() {
+        //Given
+        String password = "PasSworD";
+        String specialChars = "()-_+=?.,;:";
+        //Then
+        assertFalse(PasswordValidator.containsSpecialChar(password, specialChars));
+    }
+
+    @Test
     public void isValid_ShouldBeSuccess() {
-        assertFalse(PasswordValidator.isValid("Abc1def"), "Min-Länge fail");
-        assertTrue(PasswordValidator.isValid("Abc1defg"), "Min-Länge ok");
-        assertFalse(PasswordValidator.isValid("Abcdefgh"), "Keine Ziffer");
-        assertFalse(PasswordValidator.isValid("abcdefg1"), "Nur Kleinbuchstaben");
-        assertFalse(PasswordValidator.isValid("ABCDEFG1"), "Nur Großbuchstaben");
+        assertFalse(PasswordValidator.isValid("Abc1ef!"), "Min-Länge fail");
+        assertTrue(PasswordValidator.isValid("Abc1defg!"), "Min-Länge ok");
+        assertFalse(PasswordValidator.isValid("Abcdefgh!"), "Keine Ziffer");
+        assertFalse(PasswordValidator.isValid("abcdefg1!"), "Nur Kleinbuchstaben");
+        assertFalse(PasswordValidator.isValid("ABCDEFG1!"), "Nur Großbuchstaben");
         assertFalse(PasswordValidator.isValid("Passwort1"), "Häufiges Passwort");
-        assertTrue(PasswordValidator.isValid("Abcdef1g"), "Gültig (Basis)");
+        assertTrue(PasswordValidator.isValid("Abcdef1g!"), "Gültig (Basis)");
+        assertFalse(PasswordValidator.isValid("Abcdef1g"), "Sonderzeichen fail");
     }
 
 }

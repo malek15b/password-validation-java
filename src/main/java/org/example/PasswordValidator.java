@@ -10,6 +10,7 @@ public class PasswordValidator {
             new HashSet<>(Arrays.asList("password", "Passwort1", "12345678", "Aa345678"));
 
     static final int minLength = 8;
+    static final String specialChars = "!@#$%^&*()-_+=?.,;:";
 
     public static boolean hasMinLength(String password, int min) {
         if (password == null || password.isEmpty()) {
@@ -74,13 +75,19 @@ public class PasswordValidator {
         if (password == null || password.isEmpty()) {
             return false;
         }
-        return password.contains(allowed);
+        for (char c : password.toCharArray()) {
+            if (allowed.indexOf(c) != -1) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static boolean isValid(String password) {
         return hasMinLength(password, minLength)
                 && containsDigit(password)
                 && containsUpperAndLower(password)
-                && !isCommonPassword(password);
+                && !isCommonPassword(password)
+                && containsSpecialChar(password, specialChars);
     }
 }
