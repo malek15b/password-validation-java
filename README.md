@@ -8,11 +8,8 @@ Prüft Passwörter nach Länge, Ziffern, Groß-/Kleinbuchstaben, gängigen Passw
 - mindestens **8 Zeichen**,
 - mindestens **eine Ziffer** (0–9),
 - **Groß- und Kleinbuchstaben** (beides muss vorkommen),
-- **nicht** in einer Liste häufiger/schwacher Passwörter.
-
-#### Optional (Bonus-Policy):
-- mindestens **ein Sonderzeichen** (definiere erlaubte Menge),
-- Mindestanzahl unterschiedlicher Zeichengruppen (z. B. 3 von 4: Groß, Klein, Ziffer, Sonderzeichen).
+- **nicht** in einer Liste häufiger/schwacher Passwörter
+- mindestens **ein Sonderzeichen**
 
 #### Methodensignaturen:
 
@@ -42,5 +39,5 @@ boolean isValid = PasswordValidator.isValid("MyPass123!");
 #### CLI:
 
 ```
-java -jar target/PasswordValidator.jar MyPass123!
+java -jar target/PasswordValidator.jar MyPass123! (isValid)
 ```
