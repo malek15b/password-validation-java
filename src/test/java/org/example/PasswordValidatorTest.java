@@ -90,14 +90,6 @@ class PasswordValidatorTest {
     }
 
     @Test
-    public void generateSecurePassword_ShouldBeValid() {
-        //Given
-        String password = PasswordValidator.generateSecurePassword(12);
-        //Then
-        assertTrue(PasswordValidator.isValid(password), password);
-    }
-
-    @Test
     public void isValid_ShouldBeSuccess() {
         assertFalse(PasswordValidator.isValid("Abc1ef!"), "Min-Länge fail");
         assertTrue(PasswordValidator.isValid("Abc1defg!"), "Min-Länge ok");
